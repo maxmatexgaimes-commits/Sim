@@ -2,335 +2,250 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>✨ Max & Andrelly ✨</title>
+<title>Nossa História Infinita 💖</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ================= RESET ================= */
+:root{
+  --rosa:#ff7eb6;
+  --rosa2:#ffd1e8;
+  --texto:#5a2a3d;
+  --box:rgba(255,255,255,.95);
+}
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Comic Sans MS', cursive;
+  font-family:'Trebuchet MS','Comic Sans MS',cursive;
 }
 
-/* ================= BODY ================= */
 body{
-  background:linear-gradient(135deg,#ffe6f1,#fff);
-  color:#5a2a3d;
-  overflow-x:hidden;
+  background:#fff;
+  color:var(--texto);
+  overflow:hidden;
 }
 
-/* ================= BRILHO NOS NOMES ================= */
-.brilho{
-  background:linear-gradient(90deg,#ff7eb6,#ffd1e8,#ff7eb6);
+/* TELAS */
+.screen{
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  background-size:cover;
+  background-position:center;
+}
+.screen.active{display:flex}
+
+/* CAIXA */
+.box{
+  background:var(--box);
+  padding:26px;
+  border-radius:30px;
+  max-width:92%;
+  box-shadow:0 20px 45px rgba(0,0,0,.3);
+}
+
+/* TEXTO BRILHANTE */
+.glow{
+  background:linear-gradient(90deg,var(--rosa),#ffe6f2,var(--rosa));
   background-size:200%;
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  animation:brilhar 3s infinite linear;
+  animation:glow 3s linear infinite;
 }
+@keyframes glow{to{background-position:200%}}
 
-@keyframes brilhar{
-  from{background-position:0%;}
-  to{background-position:200%;}
-}
-
-/* ================= CARTA ================= */
-#carta{
-  position:fixed;
-  inset:0;
-  background:#fff0f8;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  z-index:100;
-  padding:30px;
-}
-
-#carta h1{
-  font-size:2.8em;
-}
-
-#carta p{
-  margin:20px 0 40px;
-  font-size:1.15em;
-  max-width:520px;
-}
-
-#abrir{
-  padding:18px 55px;
-  font-size:1.35em;
+/* BOTÕES */
+button{
+  padding:14px 36px;
   border:none;
-  border-radius:45px;
-  background:#ff7eb6;
-  color:white;
-  cursor:pointer;
-  animation:pulse 1.6s infinite;
-}
-
-@keyframes pulse{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.15)}
-  100%{transform:scale(1)}
-}
-
-/* ================= MUSICA ================= */
-#audio{display:none;}
-
-.controles{
-  position:fixed;
-  top:15px;
-  right:15px;
-  background:#fff;
-  padding:12px;
   border-radius:30px;
-  box-shadow:0 10px 20px rgba(0,0,0,.2);
-  display:flex;
-  gap:10px;
-  z-index:10;
+  background:var(--rosa);
+  color:#fff;
+  font-size:1em;
+  margin-top:15px;
+  box-shadow:0 8px 18px rgba(0,0,0,.25);
 }
 
-.controles button{
-  border:none;
-  background:#ff7eb6;
-  color:white;
-  font-size:1.1em;
-  border-radius:50%;
-  width:45px;
-  height:45px;
-  cursor:pointer;
-}
-
-/* ================= SITE ================= */
-#site{display:none;padding:25px;}
-.livro{max-width:950px;margin:auto;}
-
-/* ================= PAGINAS ================= */
-.pagina{
-  background:white;
-  border-radius:40px;
-  padding:40px;
-  margin:55px 0;
-  box-shadow:0 30px 55px rgba(0,0,0,.15);
-  animation:subir 1.4s;
-}
-
-@keyframes subir{
-  from{opacity:0;transform:translateY(80px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-.pagina h2{
-  text-align:center;
-  font-size:1.9em;
-  margin-bottom:20px;
-}
-
-.pagina p{
-  text-align:center;
-  font-size:1.15em;
-  line-height:1.9em;
-}
-
-.pagina img{
-  width:100%;
-  border-radius:35px;
-  margin-top:25px;
-  transition:.6s;
-}
-
-.pagina img:hover{
-  transform:scale(1.07) rotate(1deg);
-}
-
-/* ================= TEXTO FOTO ================= */
-.texto-foto{
-  background:#ffe4f1;
-  padding:22px;
-  border-radius:28px;
-  margin-top:20px;
-  font-size:1.05em;
-  line-height:1.8em;
-}
-
-/* ================= BONECOS ================= */
-.bonecos{
-  text-align:center;
-  font-size:2.8em;
-  margin-top:20px;
-}
-
-/* ================= CRONOMETRO ================= */
-#cronometro{
-  background:#ffe4ef;
-  padding:35px;
-  border-radius:35px;
-  text-align:center;
-  font-size:1.4em;
-  line-height:2.2em;
-}
-
-/* ================= CORAÇÕES ================= */
-.heart{
-  position:fixed;
-  top:-40px;
-  font-size:28px;
-  animation:cair linear infinite;
-  pointer-events:none;
-}
-
-@keyframes cair{
-  to{transform:translateY(120vh) rotate(360deg)}
-}
-
-/* ================= LIVRINHO ================= */
-#rodape{
-  position:fixed;
-  bottom:10px;
-  left:0;
-  width:100%;
-  pointer-events:none;
-}
-
-#livro{
-  font-size:40px;
-  position:relative;
-  animation:livro 15s linear infinite;
-}
-
-#caneta{
-  font-size:25px;
+/* HISTÓRIA */
+.dialog{
   position:absolute;
-  top:-10px;
-  left:50px;
-  animation:escrever 2s infinite;
+  bottom:0;
+  width:100%;
+  background:var(--box);
+  padding:22px;
+  border-radius:30px 30px 0 0;
 }
 
-#texto-escrevendo{
-  margin-top:5px;
-  font-size:0.9em;
-  text-align:center;
+/* BARRA DO AMOR */
+#bar{
+  width:260px;
+  height:22px;
+  background:#eee;
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  margin:15px auto;
+}
+#fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#ff7eb6,#ffd1e8);
+  transition:.3s;
+}
+.glowBar{
+  animation:pulse .6s;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 rgba(255,126,182,0)}
+  50%{box-shadow:0 0 18px rgba(255,126,182,.9)}
+  100%{box-shadow:0 0 0 rgba(255,126,182,0)}
 }
 
-@keyframes livro{
-  from{left:-10%}
-  to{left:110%}
+/* CAPIVARA */
+.capivara{
+  position:absolute;
+  font-size:30px;
+  cursor:pointer;
+  animation:float 2s infinite alternate;
 }
-
-@keyframes escrever{
-  50%{transform:rotate(15deg)}
+@keyframes float{
+  from{transform:translateY(0)}
+  to{transform:translateY(-10px)}
 }
 </style>
 </head>
 
 <body>
 
-<!-- CARTA -->
-<div id="carta">
-  <h1>💌 <span class="brilho">Max</span> & <span class="brilho">Andrelly</span> 💌</h1>
-  <p>
-    Essa página guarda um amor verdadeiro.<br>
-    Um amor que cresce, brilha e nunca acaba ✨
-  </p>
-  <button id="abrir">Abrir nossa história 💖</button>
-</div>
-
-<!-- MUSICA -->
-<audio id="audio" loop>
-  <source src="musica.mp3">
-</audio>
-
-<div class="controles">
-  <button onclick="audio.play()">▶️</button>
-  <button onclick="audio.pause()">⏸️</button>
-  <button onclick="audio.currentTime=0">⏮️</button>
-</div>
-
-<!-- SITE -->
-<div id="site">
-<div class="livro">
-
-<!-- HISTORIA -->
-<div class="pagina">
-<h2>🌸 Nossa História 🌸</h2>
-<p>
-Desde <b>11/09/2025</b>, o mundo ficou diferente.<br>
-Mais doce, mais leve e mais bonito.<br><br>
-<span class="brilho">Max</span> & <span class="brilho">Andrelly</span>  
-são duas almas que se encontraram para nunca mais se perder 💖
-</p>
-<div class="bonecos">👦💞👧</div>
-</div>
-
-<!-- (AS 10 FOTOS CONTINUAM IGUAIS À VERSÃO ANTERIOR, COM TEXTOS FOFOS) -->
-
-<div class="pagina">
-<h2>⏳ Nosso Tempo Juntos ⏳</h2>
-<div id="cronometro"></div>
-</div>
-
-<div class="pagina">
-<h2>💖 Promessa Eterna 💖</h2>
-<p>
-Esse amor não tem ponto final.<br>
-Ele é escrito todos os dias,<br>
-com carinho, respeito e infinitos sentimentos 💕
-</p>
-<div class="bonecos">👦💍👧</div>
-</div>
-
-</div>
-</div>
-
-<!-- LIVRINHO -->
-<div id="rodape">
-  <div id="livro">📖
-    <div id="caneta">✍️</div>
+<!-- INTRO -->
+<div id="intro" class="screen active" style="background-image:url('bg-por-do-sol.jpg')">
+  <div class="box">
+    <h1 class="glow">Max & Andrelly 💖</h1>
+    <p>Uma história que nunca termina</p>
+    <button onclick="start()">Começar</button>
   </div>
-  <div id="texto-escrevendo">
-    Nossa história está sendo escrita… e não vai acabar nunca ✨
+</div>
+
+<!-- HISTÓRIA -->
+<div id="story" class="screen" style="background-image:url('bg-cerejeira.jpg')">
+  <div class="dialog">
+    <strong id="name"></strong>
+    <p id="text"></p>
+    <button onclick="nextStory()">Continuar 💖</button>
+  </div>
+</div>
+
+<!-- AMOR -->
+<div id="love" class="screen" style="background-image:url('bg-noite.jpg')">
+  <div class="box">
+    <h2 class="glow">Meu amor por você 💖</h2>
+    <p id="loveText">Clique… e sinta 💞</p>
+
+    <div id="bar" onclick="addLove()">
+      <div id="fill"></div>
+    </div>
+    <p id="percent">0%</p>
+
+    <div id="fakeEnd" style="display:none">
+      <p>💔 Acho que acabou…</p>
+      <p>Talvez amar assim seja demais.</p>
+    </div>
+
+    <div id="trueEnd" style="display:none">
+      <p class="glow">Era brincadeira… 💖</p>
+      <p>Nosso amor não tem fim.</p>
+
+      <a href="https://maxmatexgaimes-commits.github.io/Jogo/" target="_self">
+        <button>Continuar nossa história 💍</button>
+      </a>
+    </div>
   </div>
 </div>
 
 <script>
-const abrir=document.getElementById("abrir");
-const carta=document.getElementById("carta");
-const site=document.getElementById("site");
-const audio=document.getElementById("audio");
-
-abrir.onclick=()=>{
-  carta.style.display="none";
-  site.style.display="block";
-  audio.play();
-  coracoes();
+/* TELAS */
+const screens=document.querySelectorAll(".screen");
+const show=id=>{
+  screens.forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
 };
 
-// CRONOMETRO
-const inicio=new Date("2025-09-11T00:00:00");
-setInterval(()=>{
-  const agora=new Date();
-  let d=agora-inicio;
-  const dias=Math.floor(d/86400000);d%=86400000;
-  const horas=Math.floor(d/3600000);d%=3600000;
-  const minutos=Math.floor(d/60000);d%=60000;
-  const segundos=Math.floor(d/1000);
-  cronometro.innerHTML=
-  `${dias} dias, ${horas} horas,<br>${minutos} minutos e ${segundos} segundos 💞`;
-},1000);
+/* HISTÓRIA */
+const story=[
+ ["Narrador","Em 11 de setembro de 2025, tudo começou 🌅"],
+ ["Max","Andrelly, desde a primeira conversa eu senti algo diferente 💖"],
+ ["Andrelly","Seu jeito me trouxe paz 🌸"],
+ ["Narrador","O tempo passou… mas o sentimento só cresceu 💫"],
+ ["Max","Meu amor por você não cabe em palavras 💍"]
+];
+let i=0;
 
-// CORAÇÕES
-function coracoes(){
-  setInterval(()=>{
-    const h=document.createElement("div");
-    h.className="heart";
-    h.innerHTML="💗";
-    h.style.left=Math.random()*100+"vw";
-    h.style.animationDuration=(Math.random()*7+6)+"s";
-    document.body.appendChild(h);
-    setTimeout(()=>h.remove(),13000);
-  },280);
+function start(){
+  show("story");
+  loadStory();
+}
+function loadStory(){
+  name.textContent=story[i][0];
+  text.textContent=story[i][1];
+  spawnCapivara();
+}
+function nextStory(){
+  i++;
+  if(i<story.length) loadStory();
+  else show("love");
+}
+
+/* AMOR */
+let love=0;
+const loveLines=[
+ "Andrelly… cada clique é um pensamento meu em você 💖",
+ "Meu amor cresce mesmo sem pedir permissão 💕",
+ "Não existe limite quando se trata de você ♾️",
+ "Eu te escolheria em todas as vidas 💍",
+ "Mesmo infinito ainda é pouco…"
+];
+
+function addLove(){
+  if(love>=100) return;
+  love+=10;
+  fill.style.width=love+"%";
+  percent.textContent=love+"%";
+  loveText.textContent=loveLines[Math.min(love/10-1,loveLines.length-1)];
+  bar.classList.add("glowBar");
+  setTimeout(()=>bar.classList.remove("glowBar"),600);
+  spawnCapivara();
+
+  if(love>=100){
+    fakeEnd.style.display="block";
+    setTimeout(()=>{
+      fakeEnd.style.display="none";
+      trueEnd.style.display="block";
+    },3000);
+  }
+}
+
+/* CAPIVARAS SECRETAS */
+let capiCount=0;
+function spawnCapivara(){
+  if(Math.random()<0.2){
+    const c=document.createElement("div");
+    c.className="capivara";
+    c.textContent="🦫";
+    c.style.left=Math.random()*80+"%";
+    c.style.top=Math.random()*60+"%";
+    c.onclick=()=>{
+      capiCount++;
+      c.remove();
+      alert("Capivara feliz 🦫💖\nO amor mora nos detalhes.");
+    };
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),5000);
+  }
 }
 </script>
 
