@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Max & Andrelly 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Comic Sans MS', cursive;
+}
+
+body{
+  background:linear-gradient(135deg,#ffe6f0,#fff);
+  color:#5c2a3d;
+  overflow-x:hidden;
+}
+
+/* CARTA */
+#carta{
+  position:fixed;
+  inset:0;
+  background:#fff0f6;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+}
+
+#carta h1{
+  font-size:2.4em;
+  margin-bottom:15px;
+}
+
+#carta p{
+  font-size:1.1em;
+  margin-bottom:25px;
+}
+
+#abrir{
+  padding:15px 40px;
+  font-size:1.2em;
+  border:none;
+  border-radius:30px;
+  background:#ff7eb6;
+  color:white;
+  cursor:pointer;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.1)}
+  100%{transform:scale(1)}
+}
+
+/* MUSICA */
+audio{
+  position:fixed;
+  bottom:10px;
+  left:10px;
+  z-index:5;
+}
+
+/* LIVRO */
+#site{
+  display:none;
+  padding:20px;
+}
+
+.livro{
+  max-width:900px;
+  margin:auto;
+}
+
+.pagina{
+  background:white;
+  border-radius:25px;
+  padding:25px;
+  margin:35px 0;
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
+  animation:aparecer 1s;
+}
+
+@keyframes aparecer{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.pagina h2{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.pagina p{
+  font-size:1.05em;
+  text-align:center;
+}
+
+.pagina img{
+  width:100%;
+  border-radius:20px;
+  margin-top:15px;
+  transition:.4s;
+}
+
+.pagina img:hover{
+  transform:scale(1.05);
+}
+
+/* BONECOS */
+.bonecos{
+  text-align:center;
+  font-size:2.2em;
+  margin-top:15px;
+}
+
+/* CONTADOR */
+#contador{
+  background:#ffe4ef;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+  font-size:1.3em;
+}
+
+/* CORAÇÕES */
+.heart{
+  position:fixed;
+  top:-30px;
+  font-size:22px;
+  animation:cair linear infinite;
+}
+
+@keyframes cair{
+  to{transform:translateY(110vh) rotate(360deg)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- CARTA -->
+<div id="carta">
+  <h1>💌 Para Andrelly 💌</h1>
+  <p>De Max, com todo amor do mundo</p>
+  <button id="abrir">Abrir cartinha</button>
+</div>
+
+<!-- MUSICA -->
+<audio id="musica" loop controls>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SITE -->
+<div id="site">
+<div class="livro">
+
+<div class="pagina">
+<h2>🌸 Nossa História 🌸</h2>
+<p>
+Desde o dia <b>11/09/2025</b>, meu mundo ficou mais bonito.  
+Você chegou de um jeito leve, doce e mudou tudo dentro de mim.  
+Ser seu é meu maior orgulho. 💖
+</p>
+<div class="bonecos">👦💞👧</div>
+</div>
+
+<div class="pagina">
+<h2>✨ Por que eu te amo ✨</h2>
+<p>
+Eu te amo pelo seu sorriso,  
+pela sua voz,  
+pelo seu jeitinho único de ser.  
+Você é meu lugar seguro. 💕
+</p>
+<div class="bonecos">👦💖👧</div>
+</div>
+
+<!-- FOTOS -->
+<div class="pagina"><h2>📸 Nosso Momento 1</h2><img src="foto1.jpg"><div class="bonecos">👦✨👧</div></div>
+<div class="pagina"><h2>📸 Nosso Momento 2</h2><img src="foto2.jpg"><div class="bonecos">👦✨👧</div></div>
+<div class="pagina"><h2>📸 Nosso Momento 3</h2><img src="foto3.jpg"><div class="bonecos">👦✨👧</div></div>
+<div class="pagina"><h2>📸 Nosso Momento 4</h2><img src="foto4.jpg"><div class="bonecos">👦✨👧</div></div>
+<div class="pagina"><h2>📸 Nosso Momento 5</h2><img src="foto5.jpg"><div class="bonecos">👦✨👧</div></div>
+<div class="pagina"><h2>📸 Nosso Momento 6</h2><img src="foto6.jpg"><div class="bonecos">👦✨👧</div></div>
+<div class="pagina"><h2>📸 Nosso Momento 7</h2><img src="foto7.jpg"><div class="bonecos">👦✨👧</div></div>
+<div class="pagina"><h2>📸 Nosso Momento 8</h2><img src="foto8.jpg"><div class="bonecos">👦✨👧</div></div>
+<div class="pagina"><h2>📸 Nosso Momento 9</h2><img src="foto9.jpg"><div class="bonecos">👦✨👧</div></div>
+<div class="pagina"><h2>📸 Nosso Momento 10</h2><img src="foto10.jpg"><div class="bonecos">👦✨👧</div></div>
+
+<div class="pagina">
+<h2>⏳ Nosso Tempo Juntos ⏳</h2>
+<div id="contador"></div>
+</div>
+
+<div class="pagina">
+<h2>💍 Promessa 💍</h2>
+<p>
+Andrelly, eu prometo te amar nos dias bons e ruins,  
+te escolher todos os dias  
+e cuidar do nosso amor com todo meu coração.  
+Eu te amo infinitamente. 💖
+</p>
+<div class="bonecos">👦💍👧</div>
+</div>
+
+</div>
+</div>
+
+<script>
+const abrir=document.getElementById("abrir");
+const carta=document.getElementById("carta");
+const site=document.getElementById("site");
+const musica=document.getElementById("musica");
+
+abrir.onclick=()=>{
+  carta.style.display="none";
+  site.style.display="block";
+  musica.play();
+  coracoes();
+};
+
+// CONTADOR
+const inicio=new Date("2025-09-11T00:00:00");
+setInterval(()=>{
+  const agora=new Date();
+  const diff=agora-inicio;
+  const dias=Math.floor(diff/(1000*60*60*24));
+  document.getElementById("contador").innerHTML=
+  `💖 Max & Andrelly estão juntos há <b>${dias}</b> dias 💖`;
+},1000);
+
+// CORAÇÕES
+function coracoes(){
+  setInterval(()=>{
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="💗";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(Math.random()*5+5)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),10000);
+  },400);
+}
+</script>
+
+</body>
+</html>
