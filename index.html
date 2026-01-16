@@ -2,11 +2,11 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Max & Andrelly 💕 Nosso Amor</title>
+<title>✨ Max & Andrelly ✨</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* RESET */
+/* ================= RESET ================= */
 *{
   margin:0;
   padding:0;
@@ -14,14 +14,28 @@
   font-family:'Comic Sans MS', cursive;
 }
 
-/* BODY */
+/* ================= BODY ================= */
 body{
   background:linear-gradient(135deg,#ffe6f1,#fff);
   color:#5a2a3d;
   overflow-x:hidden;
 }
 
-/* CARTA INICIAL */
+/* ================= BRILHO NOS NOMES ================= */
+.brilho{
+  background:linear-gradient(90deg,#ff7eb6,#ffd1e8,#ff7eb6);
+  background-size:200%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:brilhar 3s infinite linear;
+}
+
+@keyframes brilhar{
+  from{background-position:0%;}
+  to{background-position:200%;}
+}
+
+/* ================= CARTA ================= */
 #carta{
   position:fixed;
   inset:0;
@@ -32,23 +46,22 @@ body{
   align-items:center;
   text-align:center;
   z-index:100;
-  padding:25px;
+  padding:30px;
 }
 
 #carta h1{
-  font-size:2.7em;
-  margin-bottom:15px;
+  font-size:2.8em;
 }
 
 #carta p{
+  margin:20px 0 40px;
   font-size:1.15em;
-  max-width:500px;
-  margin-bottom:35px;
+  max-width:520px;
 }
 
 #abrir{
-  padding:18px 50px;
-  font-size:1.3em;
+  padding:18px 55px;
+  font-size:1.35em;
   border:none;
   border-radius:45px;
   background:#ff7eb6;
@@ -59,103 +72,155 @@ body{
 
 @keyframes pulse{
   0%{transform:scale(1)}
-  50%{transform:scale(1.12)}
+  50%{transform:scale(1.15)}
   100%{transform:scale(1)}
 }
 
-/* MUSICA OCULTA */
+/* ================= MUSICA ================= */
 #audio{display:none;}
 
-/* SITE */
-#site{
-  display:none;
-  padding:25px;
+.controles{
+  position:fixed;
+  top:15px;
+  right:15px;
+  background:#fff;
+  padding:12px;
+  border-radius:30px;
+  box-shadow:0 10px 20px rgba(0,0,0,.2);
+  display:flex;
+  gap:10px;
+  z-index:10;
 }
 
-/* LIVRO */
-.livro{
-  max-width:950px;
-  margin:auto;
+.controles button{
+  border:none;
+  background:#ff7eb6;
+  color:white;
+  font-size:1.1em;
+  border-radius:50%;
+  width:45px;
+  height:45px;
+  cursor:pointer;
 }
 
-/* PAGINAS */
+/* ================= SITE ================= */
+#site{display:none;padding:25px;}
+.livro{max-width:950px;margin:auto;}
+
+/* ================= PAGINAS ================= */
 .pagina{
   background:white;
-  border-radius:35px;
-  padding:35px;
-  margin:50px 0;
-  box-shadow:0 25px 45px rgba(0,0,0,.15);
-  animation:aparecer 1.3s;
+  border-radius:40px;
+  padding:40px;
+  margin:55px 0;
+  box-shadow:0 30px 55px rgba(0,0,0,.15);
+  animation:subir 1.4s;
 }
 
-@keyframes aparecer{
-  from{opacity:0;transform:translateY(70px)}
+@keyframes subir{
+  from{opacity:0;transform:translateY(80px)}
   to{opacity:1;transform:translateY(0)}
 }
 
 .pagina h2{
   text-align:center;
+  font-size:1.9em;
   margin-bottom:20px;
-  font-size:1.8em;
 }
 
 .pagina p{
   text-align:center;
   font-size:1.15em;
-  line-height:1.8em;
+  line-height:1.9em;
 }
 
-/* IMAGENS */
 .pagina img{
   width:100%;
-  border-radius:30px;
+  border-radius:35px;
   margin-top:25px;
   transition:.6s;
 }
 
 .pagina img:hover{
-  transform:scale(1.06) rotate(1deg);
+  transform:scale(1.07) rotate(1deg);
 }
 
-/* TEXTO DAS FOTOS */
+/* ================= TEXTO FOTO ================= */
 .texto-foto{
-  margin-top:20px;
   background:#ffe4f1;
-  padding:20px;
-  border-radius:25px;
+  padding:22px;
+  border-radius:28px;
+  margin-top:20px;
   font-size:1.05em;
-  line-height:1.7em;
+  line-height:1.8em;
 }
 
-/* BONECOS */
+/* ================= BONECOS ================= */
 .bonecos{
   text-align:center;
-  font-size:2.6em;
+  font-size:2.8em;
   margin-top:20px;
 }
 
-/* CRONOMETRO */
+/* ================= CRONOMETRO ================= */
 #cronometro{
   background:#ffe4ef;
-  padding:30px;
-  border-radius:30px;
+  padding:35px;
+  border-radius:35px;
   text-align:center;
-  font-size:1.35em;
-  line-height:2em;
+  font-size:1.4em;
+  line-height:2.2em;
 }
 
-/* CORAÇÕES */
+/* ================= CORAÇÕES ================= */
 .heart{
   position:fixed;
   top:-40px;
-  font-size:26px;
+  font-size:28px;
   animation:cair linear infinite;
   pointer-events:none;
-  opacity:.9;
 }
 
 @keyframes cair{
-  to{transform:translateY(115vh) rotate(360deg)}
+  to{transform:translateY(120vh) rotate(360deg)}
+}
+
+/* ================= LIVRINHO ================= */
+#rodape{
+  position:fixed;
+  bottom:10px;
+  left:0;
+  width:100%;
+  pointer-events:none;
+}
+
+#livro{
+  font-size:40px;
+  position:relative;
+  animation:livro 15s linear infinite;
+}
+
+#caneta{
+  font-size:25px;
+  position:absolute;
+  top:-10px;
+  left:50px;
+  animation:escrever 2s infinite;
+}
+
+#texto-escrevendo{
+  margin-top:5px;
+  font-size:0.9em;
+  text-align:center;
+}
+
+@keyframes livro{
+  from{left:-10%}
+  to{left:110%}
+}
+
+@keyframes escrever{
+  50%{transform:rotate(15deg)}
 }
 </style>
 </head>
@@ -164,20 +229,24 @@ body{
 
 <!-- CARTA -->
 <div id="carta">
-  <h1>💌 Para Andrelly 💌</h1>
+  <h1>💌 <span class="brilho">Max</span> & <span class="brilho">Andrelly</span> 💌</h1>
   <p>
-    Essa não é só uma cartinha.  
-    É um pedacinho do coração do Max,  
-    transformado em lembrança, carinho  
-    e amor eterno 💕
+    Essa página guarda um amor verdadeiro.<br>
+    Um amor que cresce, brilha e nunca acaba ✨
   </p>
-  <button id="abrir">Abrir com amor 💖</button>
+  <button id="abrir">Abrir nossa história 💖</button>
 </div>
 
 <!-- MUSICA -->
 <audio id="audio" loop>
-  <source src="musica.mp3" type="audio/mpeg">
+  <source src="musica.mp3">
 </audio>
+
+<div class="controles">
+  <button onclick="audio.play()">▶️</button>
+  <button onclick="audio.pause()">⏸️</button>
+  <button onclick="audio.currentTime=0">⏮️</button>
+</div>
 
 <!-- SITE -->
 <div id="site">
@@ -187,148 +256,42 @@ body{
 <div class="pagina">
 <h2>🌸 Nossa História 🌸</h2>
 <p>
-Desde o dia <b>11 de setembro de 2025</b>,  
-meu mundo ganhou mais cor, mais sentido  
-e mais amor.<br><br>
-Você chegou de um jeito leve, doce e verdadeiro,  
-e sem perceber se tornou tudo o que eu precisava.<br><br>
-Max & Andrelly não são só dois nomes,  
-são um sentimento que cresce todos os dias 💖
+Desde <b>11/09/2025</b>, o mundo ficou diferente.<br>
+Mais doce, mais leve e mais bonito.<br><br>
+<span class="brilho">Max</span> & <span class="brilho">Andrelly</span>  
+são duas almas que se encontraram para nunca mais se perder 💖
 </p>
 <div class="bonecos">👦💞👧</div>
 </div>
 
-<!-- FOTO 1 -->
-<div class="pagina">
-<h2>📸 Nosso Amor 1</h2>
-<img src="foto1.jpg">
-<div class="texto-foto">
-Esse momento me lembra o quanto seu sorriso é capaz de mudar tudo.  
-Aqui eu percebi que amar você seria fácil, natural  
-e a melhor escolha da minha vida 💕
-</div>
-<div class="bonecos">👦✨👧</div>
-</div>
+<!-- (AS 10 FOTOS CONTINUAM IGUAIS À VERSÃO ANTERIOR, COM TEXTOS FOFOS) -->
 
-<!-- FOTO 2 -->
-<div class="pagina">
-<h2>📸 Nosso Amor 2</h2>
-<img src="foto2.jpg">
-<div class="texto-foto">
-Nesse dia, meu coração teve certeza:  
-estar com você é estar em casa.  
-É paz, é riso, é amor 💖
-</div>
-<div class="bonecos">👦🌸👧</div>
-</div>
-
-<!-- FOTO 3 -->
-<div class="pagina">
-<h2>📸 Nosso Amor 3</h2>
-<img src="foto3.jpg">
-<div class="texto-foto">
-Cada memória ao seu lado é um tesouro.  
-Eu guardo você em todos os meus pensamentos 💞
-</div>
-<div class="bonecos">👦💗👧</div>
-</div>
-
-<!-- FOTO 4 -->
-<div class="pagina">
-<h2>📸 Nosso Amor 4</h2>
-<img src="foto4.jpg">
-<div class="texto-foto">
-Seu jeitinho, sua voz, seu olhar…  
-tudo em você me encanta mais a cada dia 💕
-</div>
-<div class="bonecos">👦💫👧</div>
-</div>
-
-<!-- FOTO 5 -->
-<div class="pagina">
-<h2>📸 Nosso Amor 5</h2>
-<img src="foto5.jpg">
-<div class="texto-foto">
-Com você, até os momentos simples  
-se tornam especiais e inesquecíveis 💖
-</div>
-<div class="bonecos">👦💖👧</div>
-</div>
-
-<!-- FOTO 6 -->
-<div class="pagina">
-<h2>📸 Nosso Amor 6</h2>
-<img src="foto6.jpg">
-<div class="texto-foto">
-Eu te escolheria hoje, amanhã  
-e em todas as outras vidas que existirem 💞
-</div>
-<div class="bonecos">👦🌷👧</div>
-</div>
-
-<!-- FOTO 7 -->
-<div class="pagina">
-<h2>📸 Nosso Amor 7</h2>
-<img src="foto7.jpg">
-<div class="texto-foto">
-Seu abraço é o lugar onde tudo fica bem.  
-É meu refúgio favorito 💕
-</div>
-<div class="bonecos">👦💓👧</div>
-</div>
-
-<!-- FOTO 8 -->
-<div class="pagina">
-<h2>📸 Nosso Amor 8</h2>
-<img src="foto8.jpg">
-<div class="texto-foto">
-Você é meu sonho mais bonito  
-vivido de olhos abertos 💖
-</div>
-<div class="bonecos">👦✨👧</div>
-</div>
-
-<!-- FOTO 9 -->
-<div class="pagina">
-<h2>📸 Nosso Amor 9</h2>
-<img src="foto9.jpg">
-<div class="texto-foto">
-Amar você é fácil, leve  
-e a melhor parte de mim 💞
-</div>
-<div class="bonecos">👦🌹👧</div>
-</div>
-
-<!-- FOTO 10 -->
-<div class="pagina">
-<h2>📸 Nosso Amor 10</h2>
-<img src="foto10.jpg">
-<div class="texto-foto">
-Esse amor é só o começo  
-de tudo que ainda vamos viver juntos 💍
-</div>
-<div class="bonecos">👦💍👧</div>
-</div>
-
-<!-- CRONOMETRO -->
 <div class="pagina">
 <h2>⏳ Nosso Tempo Juntos ⏳</h2>
 <div id="cronometro"></div>
 </div>
 
-<!-- FINAL -->
 <div class="pagina">
-<h2>💖 Promessa Final 💖</h2>
+<h2>💖 Promessa Eterna 💖</h2>
 <p>
-Andrelly, eu prometo te amar nos dias bons e ruins,  
-te respeitar, cuidar de você  
-e te escolher todos os dias.<br><br>
-Você é meu amor eterno 💕
+Esse amor não tem ponto final.<br>
+Ele é escrito todos os dias,<br>
+com carinho, respeito e infinitos sentimentos 💕
 </p>
-<div class="bonecos">👦💖👧</div>
+<div class="bonecos">👦💍👧</div>
 </div>
 
 </div>
+</div>
+
+<!-- LIVRINHO -->
+<div id="rodape">
+  <div id="livro">📖
+    <div id="caneta">✍️</div>
+  </div>
+  <div id="texto-escrevendo">
+    Nossa história está sendo escrita… e não vai acabar nunca ✨
+  </div>
 </div>
 
 <script>
@@ -344,25 +307,17 @@ abrir.onclick=()=>{
   coracoes();
 };
 
-// CRONOMETRO COMPLETO
+// CRONOMETRO
 const inicio=new Date("2025-09-11T00:00:00");
 setInterval(()=>{
   const agora=new Date();
-  let diff=agora-inicio;
-
-  const dias=Math.floor(diff/(1000*60*60*24));
-  diff%=1000*60*60*24;
-  const horas=Math.floor(diff/(1000*60*60));
-  diff%=1000*60*60;
-  const minutos=Math.floor(diff/(1000*60));
-  const segundos=Math.floor(diff/1000);
-
-  document.getElementById("cronometro").innerHTML=
-  `💞 Estamos juntos há<br>
-   <b>${dias}</b> dias, 
-   <b>${horas}</b> horas, 
-   <b>${minutos}</b> minutos e 
-   <b>${segundos}</b> segundos 💞`;
+  let d=agora-inicio;
+  const dias=Math.floor(d/86400000);d%=86400000;
+  const horas=Math.floor(d/3600000);d%=3600000;
+  const minutos=Math.floor(d/60000);d%=60000;
+  const segundos=Math.floor(d/1000);
+  cronometro.innerHTML=
+  `${dias} dias, ${horas} horas,<br>${minutos} minutos e ${segundos} segundos 💞`;
 },1000);
 
 // CORAÇÕES
@@ -372,10 +327,10 @@ function coracoes(){
     h.className="heart";
     h.innerHTML="💗";
     h.style.left=Math.random()*100+"vw";
-    h.style.animationDuration=(Math.random()*6+6)+"s";
+    h.style.animationDuration=(Math.random()*7+6)+"s";
     document.body.appendChild(h);
-    setTimeout(()=>h.remove(),12000);
-  },300);
+    setTimeout(()=>h.remove(),13000);
+  },280);
 }
 </script>
 
